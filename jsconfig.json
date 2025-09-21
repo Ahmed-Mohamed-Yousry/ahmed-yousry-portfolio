@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {}
+  },
+  "include": ["src/**/*"],  // بدل "**/*" لو ملفاتك كلها في src
+  "exclude": ["node_modules"]
+}
