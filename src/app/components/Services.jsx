@@ -31,7 +31,7 @@ const Services = () => {
       
       <p className='text-sm flex-1 leading-5'>{description}</p>
       
-      <a href={link} className='text-sm underline mt-4 flex gap-2 items-center justify-start '>
+      <a href={link || '#'}  onClick={(e) => { if(!link) e.preventDefault(); }}  className='text-sm underline mt-4 flex gap-2 items-center justify-start '>
         Read more <Image src={assets.right_arrow} alt='' className='w-4'/>
       </a>
     </div>

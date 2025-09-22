@@ -13,16 +13,7 @@ const AboutMe = () => {
       {/* الصورة والنص */}
       <div className='w-full max-w-6xl flex flex-col md:flex-row items-center md:items-start gap-8 mt-8'>
 
-        {/* الصورة */}
-<div className="flex-shrink-0 group">
-  <Image
-    src={assets.profile_image}
-    alt="Profile"
-    className="w-72 h-90 rounded-3xl border object-cover object-center shadow-lg 
-               transition-transform duration-500 ease-out
-               group-hover:scale-105 group-hover:-translate-y-2 group-hover:shadow-2xl"
-  />
-</div>
+
 
 
         {/* النص والكاردز */}

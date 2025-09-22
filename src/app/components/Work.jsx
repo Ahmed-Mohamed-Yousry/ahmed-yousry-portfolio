@@ -43,9 +43,17 @@ const Work = () => {
           </div>
         ))}
       </div>
-      <a href="" className='w-max flex justify-center items-center boreder-[0.8px] shadow-lg shadow-[#7768c3]
-       bg-[#ada1f9] rounded-full p-4 text-white font-Ovo text-lg gap-3 hover:animate-bounce transition duration-700'> 
-       Show more <Image src={assets.right_arrow_bold} alt='right arrow' className='w-4 '/></a>
+     <a 
+  href="#"
+  onClick={(e) => e.preventDefault()}
+  className="w-max flex justify-center items-center border-[0.8px] shadow-lg shadow-[#7768c3]
+             bg-[#ada1f9] rounded-full p-4 text-white font-Ovo text-lg gap-3 
+             hover:animate-slow-bounce transition duration-700"
+>
+  Show more 
+  <Image src={assets.right_arrow_bold} alt="right arrow" className="w-4" />
+</a>
+
     </div>
   );
 };

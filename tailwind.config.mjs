@@ -22,7 +22,26 @@ module.exports = {
     },
     gridTemplateColumns:{
       "auto" : "repeat(auto-fit, minmax(200px, 1fr))"
-    }
+    },
+keyframes: {
+  'slow-bounce': {
+    '0%, 100%': { transform: 'translateY(-5%)', 'animation-timing-function': 'cubic-bezier(0.8, 0, 1, 1)' },
+    '50%': { transform: 'translateY(0)', 'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)' },
+  },
+},
+animation: {
+  'slow-bounce': 'slow-bounce 0.5s infinite', // أسرع من قبل
+},
+keyframes: {
+    float: {
+      '0%, 100%': { transform: 'translateY(0px)' },
+      '50%': { transform: 'translateY(-5%)' },
+    },
+  },
+  animation: {
+    float: 'float 2s ease-in-out infinite',
+  },
+
     },
   },
   plugins: [],

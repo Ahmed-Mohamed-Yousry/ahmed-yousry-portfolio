@@ -24,14 +24,24 @@ const Header = () => {
 
 
      <div className='flex flex-col sm:flex-row gap-4 mt-4'>
-        <button className=' text-white border rounded-full p-3 gap-4  flex items-center bg-[#ada1f9]' href='#contact' >
-          <p className='font-Outfit text-lg animate-pulse'> Contact me</p>
-           <Image src={assets.right_arrow_white} alt='' className='w-6 animate-bounce'/>
-        </button>
-        <button className='bg-white text-[#ada1f9] border-[#5f51bd] border rounded-full p-3 gap-4 flex items-center' download href='./Ahmed_Yousry_Resume.pdf'>
-          <p className='font-Outfit text-lg'> my resume</p>
-           <Image src={assets.download_icon} alt='' className='w-4 '/>
-        </button>
+        <a
+  href="#contact"
+  className="text-white border rounded-full p-3 gap-4 flex items-center bg-[#ada1f9]"
+>
+  <p className="font-Outfit text-lg animate-pulse">Contact me</p>
+  <Image src={assets.right_arrow_white} alt="" className="w-6 animate-bounce"/>
+</a>
+
+        <a
+  href="/Ahmed Yousry CV.pdf"   // الملف موجود في public
+  target="_blank"               // يفتح في تاب جديد
+  rel="noopener noreferrer"
+  className="bg-white text-[#ada1f9] border-[#5f51bd] border rounded-full p-3 gap-4 flex items-center"
+>
+  <p className="font-Outfit text-lg">My Resume</p>
+  <Image src={assets.download_icon} alt="" className="w-4"/>
+</a>
+
      </div>
     </div>
     </>
