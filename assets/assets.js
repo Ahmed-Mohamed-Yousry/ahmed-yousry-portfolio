@@ -1,5 +1,7 @@
 import user_image from './user-image.png';
 import my_image from './my-image.png';
+import my_img_green from './my_img_green.jpg';
+import logo_usry_green from './logo_usry_green.png';
 import last_web from "./last-web.webp"
 import meta from "./meta.png";
 import seo from "./seo.jpg"
@@ -54,9 +56,11 @@ export const assets = {
     my_image,
     meta,
     google,
+    my_img_green,
     digital_marketing,
     back_end,
     profile_image,
+    logo_usry_green,
     marketing_icon,
     logo_usry,
     last_web,

@@ -16,7 +16,7 @@ const Footer = () => {
 <div className="w-full px-6 py-6 bg-gray-50 flex flex-col md:flex-row items-center justify-between">
   {/* حقوق النشر */}
   <p className="text-gray-500 text-sm mb-4 md:mb-0">
-    © 2024 Ahmed Yousry. All rights reserved.
+    © 2025 Ahmed Yousry. All rights reserved.
   </p>
 
   {/* روابط التواصل */}
