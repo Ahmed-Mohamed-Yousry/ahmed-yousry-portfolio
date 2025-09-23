@@ -81,7 +81,7 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
 
         {/* Mobile Menu Button */}
         <button className='md:hidden block ml-4'>
-          <Image src={assets.menu_black} className='w-6' alt='' onClick={openMenu} />
+          <Image src={isDarkMode ?assets.menu_white :assets.menu_black} className='w-6' alt='' onClick={openMenu} />
         </button>
       </div>
 
