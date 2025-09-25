@@ -56,7 +56,7 @@ const AboutMe = ({ isDarkMode }) => {
       hover:border-t-2 hover:border-r-2 hover:border-black
       dark:bg-[#66ff00] dark:text-black dark:hover:border-white`}
   >
-    <Image src={assets.marketing_icon} className="w-8 h-8 rounded-md object-contain mb-4" alt="" />
+    <Image src={isDarkMode?assets.marketing_icon_dark :assets.marketing_icon} className="w-8 h-8 rounded-md object-contain mb-4" alt="" />
     <h3 className="text-lg font-Outfit my-2 text-white dark:text-black">Marketing</h3>
     <p className="text-sm flex-1 leading-5 text-white dark:text-black">Meta Ads, Google Ads, LinkedIn Ads, content strategy, social media</p>
   </div>

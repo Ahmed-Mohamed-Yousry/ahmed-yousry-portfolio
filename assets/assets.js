@@ -3,6 +3,7 @@ import my_image from './my-image.png';
 import my_img_green from './my_img_green.jpg';
 import logo_usry_green from './logo_usry_green.png';
 import last_web from "./last-web.webp"
+import marketing_icon_dark from './goal-dark.webp'
 import meta from "./meta.png";
 import seo from "./seo.jpg"
 import back_end from "./backend-logo.webp";
@@ -58,6 +59,7 @@ export const assets = {
     google,
     my_img_green,
     digital_marketing,
+    marketing_icon_dark,
     back_end,
     profile_image,
     logo_usry_green,
