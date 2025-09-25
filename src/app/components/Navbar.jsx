@@ -86,24 +86,32 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
       </div>
 
       {/* Mobile Menu */}
-      <ul
-        ref={sideMenuRef}
-        className={`fixed top-0 -right-64 bottom-0 w-40 h-screen flex flex-col bg-[#ada1f9] dark:bg-[#66ff00] text-black dark:text-black rounded-lg shadow-lg py-20 px-10 gap-4 transition-transform duration-500`}
-      >
-        {/* Close Button */}
-        <div className='absolute top-6 right-6' onClick={closeMenu}>
-          <Image src={assets.close_black} className='w-5 cursor-pointer' alt='close-menu' />
-        </div>
+      {/* Mobile Menu */}
+<ul
+  ref={sideMenuRef}
+  className={`fixed top-0 -right-64 bottom-0 w-40 h-screen flex flex-col bg-[#ada1f9]
+     dark:bg-[#66ff00] text-black dark:text-black rounded-lg shadow-lg py-20 px-10 gap-4
+      transition-transform duration-500`}
+>
+  {/* Close Button */}
+  <div className='absolute top-6 right-6' onClick={closeMenu}>
+    <Image src={assets.close_black} className='w-5 cursor-pointer' alt='close-menu' />
+  </div>
 
-        {/* Mobile Links */}
-        {['Home', 'About me', 'Services', 'My Work', 'Contact Me'].map((item) => (
-          <li key={item}>
-            <a className='font-Ovo' onClick={closeMenu} href={`#${item.toLowerCase().replace(' ', '')}`}>
-              {item}
-            </a>
-          </li>
-        ))}
-      </ul>
+  {/* Mobile Links (تم إصلاح الـ href هنا) */}
+  {menuItems.map((item) => (
+    <li key={item.id}>
+      <a
+        className='font-Ovo'
+        onClick={closeMenu}
+        href={`#${item.id}`}
+      >
+        {item.name}
+      </a>
+    </li>
+  ))}
+</ul>
+
     </nav>
   )
 }

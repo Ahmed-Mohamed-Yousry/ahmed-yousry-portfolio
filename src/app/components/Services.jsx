@@ -33,7 +33,7 @@ const Services = () => {
               className='w-12 h-12 rounded-md object-contain mb-2'
             />
             
-            <h3 className='text-lg font-Outfit mb-2 text-black dark:text-black'>{title}</h3>
+            <h3 className='text-lg font-Outfit mb-2 text-white dark:text-black'>{title}</h3>
             
             <p className='text-sm flex-1 leading-5 text-white dark:text-black'>{description}</p>
             

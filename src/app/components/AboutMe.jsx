@@ -27,7 +27,7 @@ const AboutMe = ({ isDarkMode }) => {
       dark:bg-[#66ff00] dark:text-black dark:hover:border-white`}
   >
     <Image src={isDarkMode ? assets.edu_icon : assets.edu_icon_dark} className="w-8 h-8 rounded-md object-contain mb-4" alt="" />
-    <h3 className="text-lg font-Outfit my-2 text-black dark:text-black">Education</h3>
+    <h3 className="text-lg font-Outfit my-2 text-white dark:text-black">Education</h3>
     <p className="text-sm flex-1 leading-5 text-white dark:text-black">B.S.C in Computer Science</p>
   </div>
 
@@ -37,7 +37,7 @@ const AboutMe = ({ isDarkMode }) => {
       dark:bg-[#66ff00] dark:text-black dark:hover:border-white`}
   >
     <Image src={isDarkMode ? assets.code_icon : assets.code_icon_dark} className="w-8 h-8 rounded-md object-contain mb-4" alt="" />
-    <h3 className="text-lg font-Outfit my-2 text-black dark:text-black">Languages</h3>
+    <h3 className="text-lg font-Outfit my-2 text-white dark:text-black">Languages</h3>
     <p className="text-sm flex-1 leading-5 text-white dark:text-black">HTML, CSS, JavaScript, React, Next, Redux, Node</p>
   </div>
 
@@ -47,7 +47,7 @@ const AboutMe = ({ isDarkMode }) => {
       dark:bg-[#66ff00] dark:text-black dark:hover:border-white`}
   >
     <Image src={isDarkMode ? assets.project_icon : assets.project_icon_dark} className="w-8 h-8 rounded-md object-contain mb-4" alt="" />
-    <h3 className="text-lg font-Outfit my-2 text-black dark:text-black">Projects</h3>
+    <h3 className="text-lg font-Outfit my-2 text-white dark:text-black">Projects</h3>
     <p className="text-sm flex-1 leading-5 text-white dark:text-black">Built more than 10 projects</p>
   </div>
 
@@ -57,7 +57,7 @@ const AboutMe = ({ isDarkMode }) => {
       dark:bg-[#66ff00] dark:text-black dark:hover:border-white`}
   >
     <Image src={assets.marketing_icon} className="w-8 h-8 rounded-md object-contain mb-4" alt="" />
-    <h3 className="text-lg font-Outfit my-2 text-black dark:text-black">Marketing</h3>
+    <h3 className="text-lg font-Outfit my-2 text-white dark:text-black">Marketing</h3>
     <p className="text-sm flex-1 leading-5 text-white dark:text-black">Meta Ads, Google Ads, LinkedIn Ads, content strategy, social media</p>
   </div>
 </div>
