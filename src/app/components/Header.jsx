@@ -6,9 +6,9 @@ const Header = ({ isDarkMode }) => {
   return (
     <div className='w-full flex flex-col justify-center items-center text-center gap-6 mt-48 mb-10 scroll-mt-24' id="top">
       
-      {/* الصورة بتتغير حسب الوضع */}
+      {/* الصورة العادية */}
       <Image 
-        src={isDarkMode ? assets.my_img_green : assets.my_image} 
+        src={assets.my_image} 
         className="w-40 h-auto aspect-square rounded-full transition-all duration-500 ease-in-out" 
         alt='my-image'
       />
@@ -21,7 +21,7 @@ const Header = ({ isDarkMode }) => {
       </div>
 
       <div className='flex flex-col gap-6 items-center'>
-        <h1 className={`md:w-7/12 w-10/12 text-2xl font-bold font-Outfit ${isDarkMode ? "text-white" : ""}`}>
+        <h1 className={`md:w-7/12 w-10/12 text-2xl font-bold font-Outfit ${isDarkMode ? "text-white" : "text-black"}`}>
           MARKETING SPECIALIST | SALES & MEDIA BUYER | MERN Stack Developer based in Dammam.
         </h1>
         
@@ -30,35 +30,35 @@ const Header = ({ isDarkMode }) => {
         </p>
       </div>
 
+      {/* أزرار Contact و Resume */}
       <div className='flex flex-col sm:flex-row gap-4 mt-4'>
-  {/* Contact me */}
-  <a
-    href="#contact"
-    className={`border rounded-full p-3 gap-4 flex items-center
-      ${isDarkMode ? "bg-[#66ff00] text-black border-black" : "bg-[#ada1f9] text-white border-none"}
-    `}
-  >
-    <p className="font-Outfit text-lg animate-pulse">Contact me</p>
-    <Image src={assets.right_arrow_white} alt="" className="w-6 animate-bounce"/>
-  </a>
+        {/* Contact me */}
+        <a
+          href="#contact"
+          className="w-max flex justify-center items-center border-[0.8px] shadow-lg shadow-[#7768c3]
+             bg-[#ada1f9] rounded-full p-4 text-white dark:text-[#11001f] font-Ovo text-lg gap-3 
+             hover:opacity-80 transition duration-500"
+        >
+          <p className="font-Outfit text-lg animate-pulse">Contact me</p>
+          <Image src={isDarkMode? assets.right_arrow_bold :  assets.right_arrow_bold_dark} alt="" className="w-6 animate-bounce"/>
+        </a>
 
-  {/* My Resume */}
-  <a
-    href="/Ahmed Yousry CV.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    className={`border rounded-full p-3 gap-4 flex items-center
-      ${isDarkMode 
-        ? "bg-white text-[#5cbd1c] border-[#66ff00]" // Dark Mode: white bg, black text, green border
-        : "bg-white text-[#ada1f9] border-[#5f51bd]" // Light Mode: original
-      }
-    `}
-  >
-    <p className="font-Outfit text-lg">My Resume</p>
-    <Image src={assets.download_icon} alt="" className="w-4"/>
-  </a>
-</div>
-
+        {/* My Resume */}
+        <a
+          href="/Ahmed Yousry CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`border rounded-full p-3 gap-4 flex items-center
+            ${isDarkMode 
+              ? "bg-white text-[#11001f] border-[#5f51bd]" // Dark Mode: white bg, black text, نفس البوردر
+              : "bg-white text-[#5f51bd] border-[#5f51bd]" // Light Mode: نفس اللون
+            }
+          `}
+        >
+          <p className="font-Outfit text-lg">My Resume</p>
+          <Image src={assets.download_icon} alt="" className="w-4"/>
+        </a>
+      </div>
     </div>
   )
 }

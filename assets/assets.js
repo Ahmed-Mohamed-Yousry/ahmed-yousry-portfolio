@@ -2,6 +2,7 @@ import user_image from './user-image.png';
 import my_image from './my-image.png';
 import my_img_green from './my_img_green.jpg';
 import logo_usry_green from './logo_usry_green.png';
+import logo_usry_white from './logo_usry_white.png'
 import last_web from "./last-web.webp"
 import marketing_icon_dark from './goal-dark.png'
 import meta from "./meta.png";
@@ -60,6 +61,7 @@ export const assets = {
     my_img_green,
     digital_marketing,
     marketing_icon_dark,
+    logo_usry_white,
     back_end,
     profile_image,
     logo_usry_green,

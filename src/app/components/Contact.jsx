@@ -34,8 +34,8 @@ const Contact = () => {
       dark:bg-[url('/footer-bg-color-dark.png')]"
     >
       {/* 📨 العناوين */}
-      <p className="font-Ovo text-lg text-gray-600 dark:text-gray-300">Connect with me</p>
-      <h2 className="text-4xl font-bold font-Ovo text-gray-900 dark:text-white">Get in touch</h2>
+      <p className="font-Ovo text-lg text-gray-500 dark:text-gray-300">Connect with me</p>
+      <h2 className="text-4xl font-bold font-Ovo text-black dark:text-white">Get in touch</h2>
 
       <p className="text-center max-w-4xl text-gray-500 font-Ovo mt-4 mb-6 dark:text-gray-300">
         I’d love to hear from you! Whether you have a project in mind, a question, 
@@ -51,7 +51,7 @@ const Contact = () => {
             placeholder="Enter Your Name"
             required
             className="w-full p-3 outline-none border-[0.5px] border-gray-400 rounded-md 
-                       bg-white dark:bg-black dark:text-white transition duration-500"
+                       bg-white dark:bg-gray-900 dark:text-white transition duration-500"
             name="name"
           />
           <input
@@ -59,7 +59,7 @@ const Contact = () => {
             placeholder="Enter Your Email"
             required
             className="w-full p-3 outline-none border-[0.5px] border-gray-400 rounded-md 
-                       bg-white dark:bg-black dark:text-white transition duration-500"
+                       bg-white dark:bg-gray-900 dark:text-white transition duration-500"
             name="email"
           />
         </div>
@@ -69,17 +69,16 @@ const Contact = () => {
           required
           placeholder="Enter your message"
           className="w-full p-3 outline-none border-[0.5px] border-gray-400 rounded-md 
-                     bg-white dark:bg-black dark:text-white mb-6 transition duration-500"
+                     bg-white dark:bg-gray-900 dark:text-white mb-6 transition duration-500"
           name="message"
         ></textarea>
 
         {/* 🚀 زر الإرسال */}
         <button
           type="submit"
-          className="w-max flex justify-center items-center border-[0.8px] shadow-lg shadow-[#7768c3]
-                     bg-[#ada1f9] rounded-full px-6 py-3 text-white font-Ovo text-lg gap-3 
-                     hover:animate-slow-bounce transition duration-700 
-                     dark:bg-[#66ff00] dark:text-black dark:shadow-[#4caf50]"
+          className="w-max px-8  flex justify-center items-center border-[0.8px] shadow-lg shadow-[#7768c3]
+             bg-[#ada1f9] rounded-full p-4 text-white dark:text-[#11001f] font-Ovo text-lg gap-3 
+             hover:opacity-80 transition duration-500"
         >
           Submit
         </button>
