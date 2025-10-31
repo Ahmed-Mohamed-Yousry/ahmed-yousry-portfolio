@@ -1,10 +1,22 @@
+'use client';
 import { assets } from '../../../assets/assets'
 import Image from 'next/image'
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // تأكد إن الكومبوننت اتحمل فعلاً عشان نتفادى مشكلة الـ hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null; // يمنع العرض قبل تحميل الثيم فعلياً
+
   const isDarkMode = theme === "dark";
+
   return (
     <div className='w-full flex flex-col justify-center items-center text-center gap-6 mt-48 mb-10 scroll-mt-24' id="top">
       
@@ -52,8 +64,8 @@ const Header = () => {
           rel="noopener noreferrer"
           className={`border rounded-full p-3 gap-4 flex items-center
             ${isDarkMode 
-              ? "bg-white text-[#11001f] border-[#5f51bd]" // Dark Mode: white bg, black text, نفس البوردر
-              : "bg-white text-[#5f51bd] border-[#5f51bd]" // Light Mode: نفس اللون
+              ? "bg-white text-[#11001f] border-[#5f51bd]"
+              : "bg-white text-[#5f51bd] border-[#5f51bd]"
             }
           `}
         >
@@ -65,4 +77,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;
