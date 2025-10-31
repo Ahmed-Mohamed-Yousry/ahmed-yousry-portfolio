@@ -1,45 +1,36 @@
+'use client';
 import { assets } from '../../../assets/assets'
 import Image from 'next/image'
 import React from 'react'
+import { useTheme } from "next-themes";
 
-const AboutMe = ({ isDarkMode }) => {
+const AboutMe = () => {
+  const { theme } = useTheme();
+  const isDarkMode = theme === "dark";
+
   return (
     <div
       id="about"
       className="w-full flex flex-col justify-center items-center text-center gap-6 mt-20 mb-10 px-4 scroll-mt-24"
     >
-      {/* العنوان */}
-      <p className="font-Ovo text-lg text-gray-500 dark:text-gray-300">
-        Introduction
-      </p>
-      <h2 className="text-4xl font-bold font-Ovo text-black dark:text-white">
-        About Me
-      </h2>
+      <p className="font-Ovo text-lg text-gray-500 dark:text-gray-300">Introduction</p>
+      <h2 className="text-4xl font-bold font-Ovo text-black dark:text-white">About Me</h2>
 
       <div className="w-full max-w-6xl flex flex-col md:flex-row items-center md:items-start gap-8 mt-8">
         <div className="flex-1 flex flex-col gap-6">
-          {/* الوصف */}
-          <p className="text-md font-Ovo leading-relaxed text-gray-600 dark:text-gray-300">
-            Marketing specialist with 4+ years of experience in media buying, B2B sales, SEO, and
-            digital marketing.
+          <p className="text-md font-Ovo leading-relaxed text-gray-600 dark:text-gray-400">
+            Marketing specialist with 4+ years of experience in media buying, B2B sales, SEO, and digital marketing.
             <br />
-            Proven track record in managing high-performing ad campaigns, enhancing brand
-            visibility, and driving revenue growth.
+            Proven track record in managing high-performing ad campaigns, enhancing brand visibility, and driving revenue growth.
             <br />
-            Effective communicator and strategist with technical knowledge in full-stack web
-            development.
+            Effective communicator and strategist with technical knowledge in full-stack web development.
           </p>
 
-          {/* البطاقات */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-start">
             {/* Education */}
-            <div
-              className="flex flex-col rounded bg-[#ada1f9] shadow-sm p-4 min-h-[180px] transition-all
-               duration-300 ease-in-out
-              hover:border-t-2 hover:border-r-2 hover:border-black dark:hover:border-white "
-            >
+            <div className="flex flex-col rounded bg-[#ada1f9] shadow-sm p-4 min-h-[180px] transition-all duration-300 ease-in-out hover:border-t-2 hover:border-r-2 hover:border-black dark:hover:border-white ">
               <Image
-                src={isDarkMode ? assets.edu_icon :  assets.edu_icon_dark  }
+                src={isDarkMode ? assets.edu_icon : assets.edu_icon_dark}
                 className="w-8 h-8 rounded-md object-contain mb-4"
                 alt="education icon"
               />
@@ -48,12 +39,9 @@ const AboutMe = ({ isDarkMode }) => {
             </div>
 
             {/* Languages */}
-            <div
-              className="flex flex-col rounded bg-[#ada1f9] shadow-sm p-4 min-h-[180px] transition-all duration-300 ease-in-out
-              hover:border-t-2 hover:border-r-2 hover:border-black dark:hover:border-white"
-            >
+            <div className="flex flex-col rounded bg-[#ada1f9] shadow-sm p-4 min-h-[180px] transition-all duration-300 ease-in-out hover:border-t-2 hover:border-r-2 hover:border-black dark:hover:border-white">
               <Image
-                src={isDarkMode ? assets.code_icon :  assets.code_icon_dark}
+                src={isDarkMode ? assets.code_icon : assets.code_icon_dark}
                 className="w-8 h-8 rounded-md object-contain mb-4"
                 alt="languages icon"
               />
@@ -64,12 +52,9 @@ const AboutMe = ({ isDarkMode }) => {
             </div>
 
             {/* Projects */}
-            <div
-              className="flex flex-col rounded bg-[#ada1f9] shadow-sm p-4 min-h-[180px] transition-all duration-300 ease-in-out
-              hover:border-t-2 hover:border-r-2 hover:border-black dark:hover:border-white"
-            >
+            <div className="flex flex-col rounded bg-[#ada1f9] shadow-sm p-4 min-h-[180px] transition-all duration-300 ease-in-out hover:border-t-2 hover:border-r-2 hover:border-black dark:hover:border-white">
               <Image
-                src={isDarkMode ? assets.project_icon  : assets.project_icon_dark }
+                src={isDarkMode ? assets.project_icon : assets.project_icon_dark}
                 className="w-8 h-8 rounded-md object-contain mb-4"
                 alt="projects icon"
               />
@@ -78,10 +63,7 @@ const AboutMe = ({ isDarkMode }) => {
             </div>
 
             {/* Marketing */}
-            <div
-              className="flex flex-col rounded bg-[#ada1f9] shadow-sm p-4 min-h-[180px] transition-all duration-300 ease-in-out
-              hover:border-t-2 hover:border-r-2 hover:border-black dark:hover:border-white"
-            >
+            <div className="flex flex-col rounded bg-[#ada1f9] shadow-sm p-4 min-h-[180px] transition-all duration-300 ease-in-out hover:border-t-2 hover:border-r-2 hover:border-black dark:hover:border-white">
               <Image
                 src={isDarkMode ? assets.marketing_icon_dark : assets.marketing_icon}
                 className="w-8 h-8 rounded-md object-contain mb-4"
@@ -94,10 +76,7 @@ const AboutMe = ({ isDarkMode }) => {
             </div>
           </div>
 
-          {/* Tools */}
-          <p className="font-Ovo text-start text-gray-500 dark:text-gray-300">
-            Tools I use
-          </p>
+          <p className="font-Ovo text-start text-gray-500 dark:text-gray-300">Tools I use</p>
           <div className="flex flex-wrap justify-start gap-4">
             <Image alt="" src={assets.vscode} className="w-11 h-11 rounded border p-1 object-contain" />
             <Image alt="" src={assets.mongodb} className="w-11 h-11 rounded border p-1 object-contain" />
@@ -111,7 +90,7 @@ const AboutMe = ({ isDarkMode }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AboutMe
+export default AboutMe;

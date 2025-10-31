@@ -39,14 +39,7 @@ const Services = () => {
               {description}
             </p>
             
-            <a 
-              href={link || '#'}  
-              onClick={(e) => { if(!link) e.preventDefault(); }}  
-              className='text-sm underline mt-4 flex gap-2 items-center justify-start text-white dark:text-gray-800 hover:opacity-80'
-            >
-              Read more 
-              <Image src={assets.right_arrow} alt='' className='w-4'/>
-            </a>
+            
           </div>
         ))}
       </div>

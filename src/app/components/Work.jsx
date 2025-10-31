@@ -9,7 +9,7 @@ const Work = () => {
       className="w-full flex flex-col justify-center items-center text-center gap-4 mt-20 mb-10 px-12 scroll-mt-24"
     >
       <p className="font-Ovo text-lg text-gray-500 dark:text-gray-300">My Portfolio</p>
-      <h2 className="text-4xl font-bold font-Ovo text-black dark:text-white">My Latest Work</h2>
+      <h2 className="md:text-4xl text-3xl font-bold font-Ovo text-black dark:text-white">My Latest Work</h2>
 
       <p className="text-center max-w-4xl text-gray-500 font-Ovo mt-4 mb-6 dark:text-gray-300">
         I create tailored digital solutions that help businesses grow, combining 

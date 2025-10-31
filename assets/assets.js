@@ -149,3 +149,73 @@ export const infoList = [
 export const toolsData = [
     assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
 ];
+
+export const allProjects = [
+    {
+      title: 'Morgan',
+      description: 'portfolio website famliar with bootstrap ',
+      bgImage: '/Morgan.png',
+      link: 'https://bootstrab-project-coral.vercel.app/'
+    },
+    {
+      title: 'E-commerce Platform',
+      description: 'Front-End Development',
+      bgImage: '/EcommercNEW.png',
+      link: 'https://freshcart-eta-one.vercel.app/'
+    },
+    {
+      title: 'DEVELCO',
+      description: 'Your hub for movies and series',
+      bgImage: '/develekko.png',
+      link : "https://ahmed-mohamed-yousry.github.io/develekko/"
+    },
+    {
+      title: 'GAME OVER',
+      description: 'Browse, play, and download games',
+      bgImage: '/GAME_OVER.png',
+      link:"https://game-over-woad.vercel.app/"
+    },
+  ];
+
+    export const testimonialsData = [
+    {
+      name: "Frontend Expert",
+      company: "Route academy",
+      description: "Exceptional proficiency in crafting responsive, high-performance web interfaces using React and Next.js, transforming design concepts into seamless user experiences.",
+      bgImage: '/Ahmed_mohamed_frontend.JPG',
+    },
+    {
+      name: "Backend Expert",
+      company: "Route academy",
+      description: "Highly skilled in building robust and scalable APIs with a strong focus on database architecture, performance optimization, and security best practices.",
+      bgImage: '/Ahmed_mohamed_backend.JPG',
+    },
+
+
+
+  ];
+
+  export const digitalMarketingTestimonials = [
+        {
+      name: "Digital Marketing and E-commerce ",
+      company: "COURSERA",
+      description: "Proven expertise in managing high-impact digital marketing campaigns across platforms like Meta and Google Ads, driving significant ROI and enhancing brand visibility in competitive markets.",
+      bgImage: '/digital marketing and E-commerce.png',
+      rating: 5
+    }
+    ,
+    {
+      name:"Digital Marketing ",
+      company:"Udemy",
+      description:"Demonstrated ability to strategize and execute comprehensive digital marketing plans, leveraging SEO, content marketing, and social media to boost online presence and engagement.",
+      bgImage:'/udemy digital marketing course ahmed.png',
+      rating: 5
+    },
+        {
+      name:"Digital Marketing ",
+      company:"Udemy",
+      description:"Demonstrated ability to strategize and execute comprehensive digital marketing plans, leveraging SEO, content marketing, and social media to boost online presence and engagement.",
+      bgImage:'/udemy digital marketing course ahmed.png',
+      rating: 5
+    }
+  ]

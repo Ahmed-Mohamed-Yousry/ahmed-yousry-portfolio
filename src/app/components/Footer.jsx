@@ -1,10 +1,13 @@
 import { assets } from '../../../assets/assets';
 import Image from 'next/image';
 import React from 'react';
+import { useTheme } from 'next-themes';
 
-const Footer = ({ isDarkMode }) => {
+const Footer = () => {
+  const { theme } = useTheme();
+  const isDarkMode = theme === "dark";
   return (
-    <div className='mt-20'>
+    <div className='mt-5'>
       <div className='text-center'>
         {/* اللوجو يتغير حسب الوضع */}
         <Image 

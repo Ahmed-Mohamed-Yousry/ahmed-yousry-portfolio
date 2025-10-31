@@ -1,8 +1,10 @@
 import { assets } from '../../../assets/assets'
 import Image from 'next/image'
-import React from 'react'
+import { useTheme } from "next-themes";
 
-const Header = ({ isDarkMode }) => {
+const Header = () => {
+  const { theme } = useTheme();
+  const isDarkMode = theme === "dark";
   return (
     <div className='w-full flex flex-col justify-center items-center text-center gap-6 mt-48 mb-10 scroll-mt-24' id="top">
       
