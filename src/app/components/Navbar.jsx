@@ -24,10 +24,15 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
   const sideMenuRef = useRef();
 
   const openMenu = () => {
-    sideMenuRef.current.style.transform = 'translateX(0)';
+    if (sideMenuRef.current) {
+      sideMenuRef.current.style.transform = 'translateX(0)';
+    }
   };
+
   const closeMenu = () => {
-    sideMenuRef.current.style.transform = 'translateX(100%)';
+    if (sideMenuRef.current) {
+      sideMenuRef.current.style.transform = 'translateX(100%)';
+    }
   };
 
   useEffect(() => {
@@ -44,9 +49,7 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
       router.push(`/#${id}`);
     } else {
       const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      if (element) element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -55,16 +58,14 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
       router.push("/#contact");
     } else {
       const element = document.getElementById("contact");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      if (element) element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 w-full px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50
-      backdrop-blur-lg transition-colors duration-300  ${
+      backdrop-blur-lg transition-colors duration-300 ${
         isScroll
           ? isDark
             ? 'bg-[#11001f]/80 shadow-lg'
@@ -78,6 +79,7 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
           src={assets.logo_usry}
           className="w-36 h-18 cursor-pointer mr-14 transition-all duration-500"
           alt="ahmed-logo"
+          priority
         />
       </Link>
 
@@ -116,6 +118,7 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
         {/* Theme Toggle */}
         <button onClick={() => setDarkMode((prev) => !prev)}>
           <Image
+            key={isDark ? 'sun' : 'moon'}
             src={isDark ? assets.sun_icon : assets.moon_icon}
             className="w-6 transition-transform hover:scale-110"
             alt="theme-toggle"
@@ -130,6 +133,7 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
         >
           Contact
           <Image
+            key={isDark ? 'arrow-dark' : 'arrow-light'}
             src={isDark ? assets.arrow_icon : assets.arrow_icon_dark}
             className="w-3"
             alt="contact-arrow"
@@ -139,6 +143,7 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
         {/* Mobile Menu Button */}
         <button className="md:hidden block ml-4" onClick={openMenu}>
           <Image
+            key={isDark ? 'menu-dark' : 'menu-light'}
             src={isDark ? assets.menu_white : assets.menu_black}
             className="w-6 transition-all duration-300"
             alt="menu-icon"
@@ -156,8 +161,9 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
         {/* Close Button */}
         <div className="absolute top-4 right-4 cursor-pointer" onClick={closeMenu}>
           <Image
-            src={isDark ? assets.close_black : assets.close_white}
-            className="w-5"
+            key={isDark ? 'close-dark' : 'close-light'}
+            src={isDark ? assets.close_white : assets.close_black}
+            className="w-5 transition-transform duration-200 hover:scale-110"
             alt="close-menu"
           />
         </div>

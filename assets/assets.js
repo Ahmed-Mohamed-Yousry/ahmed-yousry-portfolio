@@ -187,7 +187,7 @@ export const allProjects = [
       name: "Frontend Expert",
       company: "Route academy",
       description: "Exceptional proficiency in crafting responsive, high-performance web interfaces using React and Next.js, transforming design concepts into seamless user experiences.",
-      bgImage: '/ahmed_mohamed_frontend.JPG',
+      bgImage: '/ahmed_mohamed_frontend.jpg',
     },
     {
       name: "Backend Expert",
