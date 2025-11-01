@@ -111,27 +111,32 @@ export const assets = {
 };
 
 export const workData = [
-    {
-        title: 'Frontend project',
-        description: 'Web Design',
-        bgImage: '/work-1.webp',
-    },
-    {
-        title: 'MERN stack project',
-        description: 'Web Design',
-        bgImage: '/work-2.webp',
-    },
-    {
-        title: 'MEDIA BUYING',
-        description: 'Digital Advertising',
-        bgImage: '/work-3.webp',
-    },
-    {
-        title: 'Video Editing',
-        description: 'Learning Video Editing',
-        bgImage: '/work-4.webp',
-    },
-]
+  {
+    title: 'Frontend project',
+    description: 'Web Design',
+    bgImage: '/work-1.webp',
+    link: '/projects', // 🔗 يفتح صفحة المشاريع
+  },
+  {
+    title: 'MERN stack project',
+    description: 'Web Design',
+    bgImage: '/work-2.webp',
+    link: 'https://github.com/Ahmed-Mohamed-Yousry', // 🔗 رابط GitHub
+  },
+  {
+    title: 'MEDIA BUYING',
+    description: 'Digital Advertising',
+    bgImage: '/work-3.webp',
+    link: '/marketing', // 🔗 صفحة التسويق
+  },
+  {
+    title: 'Video Editing',
+    description: 'Learning Video Editing',
+    bgImage: '/work-4.webp',
+    link: '', // 🔗 مفيش لينك حاليًا
+  },
+];
+
 
 export const serviceData = [
     { icon: assets.last_web, title: 'Web design', description: 'Develop responsive websites using React, Next.js, Tailwind CSS, and modern front-end practices.', link: '' },
@@ -182,13 +187,13 @@ export const allProjects = [
       name: "Frontend Expert",
       company: "Route academy",
       description: "Exceptional proficiency in crafting responsive, high-performance web interfaces using React and Next.js, transforming design concepts into seamless user experiences.",
-      bgImage: '/Ahmed_mohamed_frontend.JPG',
+      bgImage: '/ahmed_mohamed_frontend.JPG',
     },
     {
       name: "Backend Expert",
       company: "Route academy",
       description: "Highly skilled in building robust and scalable APIs with a strong focus on database architecture, performance optimization, and security best practices.",
-      bgImage: '/Ahmed_mohamed_backend.JPG',
+      bgImage: '/ahmed_mohamed_backend.jpg',
     },
 
 

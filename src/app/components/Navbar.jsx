@@ -4,8 +4,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { assets } from '../../../assets/assets';
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
 
 const Navbar = ({ isDarkMode, setDarkMode }) => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   const menuItems = [
     { name: 'Home', id: 'top', path: '/' },
     { name: 'About', id: 'about' },
@@ -62,7 +66,7 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
       className={`fixed top-0 left-0 right-0 w-full px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50
       backdrop-blur-lg transition-colors duration-300  ${
         isScroll
-          ? isDarkMode
+          ? isDark
             ? 'bg-[#11001f]/80 shadow-lg'
             : 'bg-white/80 shadow-md'
           : ''
@@ -112,7 +116,7 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
         {/* Theme Toggle */}
         <button onClick={() => setDarkMode((prev) => !prev)}>
           <Image
-            src={isDarkMode ? assets.sun_icon : assets.moon_icon}
+            src={isDark ? assets.sun_icon : assets.moon_icon}
             className="w-6 transition-transform hover:scale-110"
             alt="theme-toggle"
           />
@@ -126,7 +130,7 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
         >
           Contact
           <Image
-            src={isDarkMode ? assets.arrow_icon : assets.arrow_icon_dark}
+            src={isDark ? assets.arrow_icon : assets.arrow_icon_dark}
             className="w-3"
             alt="contact-arrow"
           />
@@ -135,8 +139,8 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
         {/* Mobile Menu Button */}
         <button className="md:hidden block ml-4" onClick={openMenu}>
           <Image
-            src={isDarkMode ? assets.menu_white : assets.menu_black}
-            className="w-6"
+            src={isDark ? assets.menu_white : assets.menu_black}
+            className="w-6 transition-all duration-300"
             alt="menu-icon"
           />
         </button>
@@ -152,7 +156,7 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
         {/* Close Button */}
         <div className="absolute top-4 right-4 cursor-pointer" onClick={closeMenu}>
           <Image
-            src={isDarkMode ? assets.close_black : assets.close_white}
+            src={isDark ? assets.close_black : assets.close_white}
             className="w-5"
             alt="close-menu"
           />
@@ -189,7 +193,7 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
             handleContactClick();
             closeMenu();
           }}
-          className="font-Ovo text-start mt-2 text-white dark:text-black  transition-colors"
+          className="font-Ovo text-start mt-2 text-white dark:text-black transition-colors"
         >
           Contact
         </button>

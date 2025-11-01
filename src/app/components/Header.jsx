@@ -8,7 +8,7 @@ const Header = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // تأكد إن الكومبوننت اتحمل فعلاً عشان نتفادى مشكلة الـ hydration
+
   useEffect(() => {
     setMounted(true);
   }, []);
