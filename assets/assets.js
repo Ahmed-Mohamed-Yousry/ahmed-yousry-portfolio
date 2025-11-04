@@ -194,12 +194,6 @@ export const allProjects = [
       company: "Route academy",
       description: "Highly skilled in building robust and scalable APIs with a strong focus on database architecture, performance optimization, and security best practices.",
       bgImage: '/ahmed mohamed backend.jpg'
-    },
-    {
-      name: "Backend Expert",
-      company: "Route academy",
-      description: "Highly skilled in building robust and scalable APIs with a strong focus on database architecture, performance optimization, and security best practices.",
-      bgImage: '/ahmedyousry.jpg'
     }
   ];
 
