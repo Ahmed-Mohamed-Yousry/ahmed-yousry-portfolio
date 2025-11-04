@@ -108,7 +108,7 @@ const TestimonialsPage = () => {
                       <img
                         src={t.bgImage}
                         alt={t.name}
-                        className="max-w-full max-h-full object-contain"
+                        className="max-w-full max-h-full object-contain unoptimized"
                         onError={(e) => {
                           e.target.src =
                             'https://via.placeholder.com/600x400/ada1f9/fff?text=Certificate';
