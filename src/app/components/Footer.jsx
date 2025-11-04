@@ -1,39 +1,47 @@
+'use client';
 import { assets } from '../../../assets/assets';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 
 const Footer = () => {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // ✅ نمنع الريندر قبل تحميل الثيم (يحل مشكلة اللاج والتأخير)
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
   const isDarkMode = theme === "dark";
 
   return (
-    <div className='mt-5 transition-all duration-500'>
-      <div className='text-center'>
-        {/* اللوجو يتغير حسب الوضع */}
+    <div className="mt-5 transition-all duration-500">
+      <div className="text-center">
+        {/* ✅ اللوجو يتغير حسب الوضع */}
         <Image
           key={theme}
           src={assets.logo_usry}
-          alt='logo'
+          alt="logo"
           className="w-36 mx-auto mb-1 transition-all duration-500"
           priority
         />
 
-        {/* الإيميل */}
-        <div className='w-max flex items-center gap-3 mb-2 mx-auto'>
+        {/* ✅ الإيميل */}
+        <div className="w-max flex items-center gap-3 mb-2 mx-auto">
           <Image
             key={theme}
             src={assets.mail_icon}
-            alt='mail icon'
-            className='w-6 transition-all duration-300'
+            alt="mail icon"
+            className="w-6 transition-all duration-300"
           />
-          <span className={`text-gray-700 dark:text-gray-300 transition-colors duration-500`}>
+          <span className="text-gray-700 dark:text-gray-300 transition-colors duration-500">
             ahmed.baakhet@gmail.com
           </span>
         </div>
       </div>
 
-      {/* حقوق النشر وروابط التواصل */}
+      {/* ✅ الخلفية تتبدل فورًا بدون لاج */}
       <div
         key={theme}
         className={`w-full px-6 py-6 flex flex-col md:flex-row items-center justify-between 

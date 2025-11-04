@@ -221,3 +221,61 @@ export const allProjects = [
       rating: 5
     }
   ]
+// أضف هذا الكود في ملف assets/assets.js
+export const marketingResults = [
+  {
+    id: 1,
+    title: "حملة فيسبوك إعلانية - زيادة المبيعات",
+    client: "شركة تجارية",
+    description: "زيادة المبيعات بنسبة 300% خلال 3 أشهر من خلال استراتيجية تسويق متكاملة على منصات التواصل الاجتماعي",
+    beforeImage: '/marketing-before-1.jpg',
+    afterImage: '/marketing-after-1.jpg',
+    metrics: {
+      revenue: "+300%",
+      engagement: "+450%",
+      conversion: "+5.2%",
+      period: "3 أشهر"
+    },
+    platforms: ['Facebook', 'Instagram', 'Google Ads'],
+    category: "التجارة الإلكترونية"
+  },
+  {
+    id: 2,
+    title: "استراتيجية SEO متكاملة",
+    client: "موقع خدمي",
+    description: "تحسين ترتيب الموقع في محركات البحث وزيادة الزوار العضويين بنسبة 200% خلال 6 أشهر",
+    beforeImage: '/marketing-before-2.jpg',
+    afterImage: '/marketing-after-2.jpg',
+    metrics: {
+      traffic: "+200%",
+      ranking: "الصفحة الأولى",
+      leads: "+150%",
+      period: "6 أشهر"
+    },
+    platforms: ['SEO', 'Content Marketing', 'Google Analytics'],
+    category: "التحسين لمحركات البحث"
+  },
+  {
+    id: 3,
+    title: "حملة تسويق بالمحتوى",
+    client: "علامة تجارية",
+    description: "بناء استراتيجية محتوى متكاملة ساهمت في زيادة الوعي بالعلامة التجارية والمشاركة",
+    beforeImage: '/marketing-before-3.jpg',
+    afterImage: '/marketing-after-3.jpg',
+    metrics: {
+      engagement: "+300%",
+      followers: "+25K",
+      reach: "+500%",
+      period: "4 أشهر"
+    },
+    platforms: ['Content', 'Social Media', 'Email Marketing'],
+    category: "تسويق المحتوى"
+  }
+];
+
+export const marketingStats = [
+  { number: "150%", label: "متوسط زيادة المبيعات", icon: "📈" },
+  { number: "3M+", label: "وصول للحملات", icon: "👥" },
+  { number: "95%", label: "رضا العملاء", icon: "⭐" },
+  { number: "50+", label: "مشروع ناجح", icon: "🚀" }
+];
