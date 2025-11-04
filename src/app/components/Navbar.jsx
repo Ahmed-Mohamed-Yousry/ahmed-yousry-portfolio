@@ -6,9 +6,16 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 
-const Navbar = ({ isDarkMode, setDarkMode }) => {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
+const Navbar = () => {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [isScroll, setIsScroll] = useState(false);
+  const sideMenuRef = useRef();
+
+  // علشان نتأكد إن الثيم اتحدد بعد الـ hydration
+  useEffect(() => setMounted(true), []);
+
+  const isDark = mounted && theme === "dark";
 
   const menuItems = [
     { name: 'Home', id: 'top', path: '/' },
@@ -20,19 +27,11 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
     { name: 'Certifications', path: '/testimonials' },
   ];
 
-  const [isScroll, setIsScroll] = useState(false);
-  const sideMenuRef = useRef();
-
   const openMenu = () => {
-    if (sideMenuRef.current) {
-      sideMenuRef.current.style.transform = 'translateX(0)';
-    }
+    if (sideMenuRef.current) sideMenuRef.current.style.transform = 'translateX(0)';
   };
-
   const closeMenu = () => {
-    if (sideMenuRef.current) {
-      sideMenuRef.current.style.transform = 'translateX(100%)';
-    }
+    if (sideMenuRef.current) sideMenuRef.current.style.transform = 'translateX(100%)';
   };
 
   useEffect(() => {
@@ -62,6 +61,8 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
     }
   };
 
+  if (!mounted) return null; // يمنع الوميض عند التحميل
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 w-full px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50
@@ -79,7 +80,6 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
           src={assets.logo_usry}
           className="w-36 h-18 cursor-pointer mr-14 transition-all duration-500"
           alt="ahmed-logo"
-          priority
         />
       </Link>
 
@@ -116,11 +116,13 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
       {/* Actions */}
       <div className="flex items-center gap-6">
         {/* Theme Toggle */}
-        <button onClick={() => setDarkMode((prev) => !prev)}>
+        <button
+          onClick={() => setTheme(isDark ? "light" : "dark")}
+          className="transition-transform hover:scale-110"
+        >
           <Image
-            key={isDark ? 'sun' : 'moon'}
             src={isDark ? assets.sun_icon : assets.moon_icon}
-            className="w-6 transition-transform hover:scale-110"
+            className="w-6"
             alt="theme-toggle"
           />
         </button>
@@ -133,7 +135,6 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
         >
           Contact
           <Image
-            key={isDark ? 'arrow-dark' : 'arrow-light'}
             src={isDark ? assets.arrow_icon : assets.arrow_icon_dark}
             className="w-3"
             alt="contact-arrow"
@@ -143,7 +144,6 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
         {/* Mobile Menu Button */}
         <button className="md:hidden block ml-4" onClick={openMenu}>
           <Image
-            key={isDark ? 'menu-dark' : 'menu-light'}
             src={isDark ? assets.menu_white : assets.menu_black}
             className="w-6 transition-all duration-300"
             alt="menu-icon"
@@ -158,17 +158,14 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
         bg-[#ada1f9] text-white rounded-l-2xl shadow-lg py-8 px-8 gap-4
         transition-transform duration-500 translate-x-full dark:text-black`}
       >
-        {/* Close Button */}
         <div className="absolute top-4 right-4 cursor-pointer" onClick={closeMenu}>
           <Image
-            key={isDark ? 'close-dark' : 'close-light'}
-            src={isDark ? assets.close_white : assets.close_black}
-            className="w-5 transition-transform duration-200 hover:scale-110"
+            src={isDark ? assets.close_black : assets.close_white}
+            className="w-5"
             alt="close-menu"
           />
         </div>
 
-        {/* Links */}
         {menuItems.map((item) => (
           <li key={item.name}>
             {item.path ? (
@@ -193,7 +190,6 @@ const Navbar = ({ isDarkMode, setDarkMode }) => {
           </li>
         ))}
 
-        {/* Contact Button (Mobile) */}
         <button
           onClick={() => {
             handleContactClick();

@@ -44,6 +44,6 @@ keyframes: {
 
     },
   },
-  darkMode: "selector",
+darkMode: "class",
   plugins: [],
 };
